@@ -55,9 +55,7 @@
          border: none;
          outline: none;
          font-family: 'Poppins', sans-serif;
-
          border-radius: 10px;
-
       }
 
       span {
@@ -129,7 +127,7 @@
 
          // Alphabets checking
          else if (!isNaN(str.uname.value)) {
-            uname_span.innerHTML = "Enter only alhpabets";
+            uname_span.innerHTML = "Enter only alphabets";
             str.uname.focus();
             return false;
          }
@@ -155,22 +153,87 @@
             str.email.focus();
             return false;
          }
+
          //Format checking
          else if (!mail.test(str.email.value)) {
             email_span.innerHTML = "Write in this format yourname@example.com";
             str.email.focus();
+
          }
          else {
             email_span.innerHTML = "";
          }
 
+         // ############## Mobile number ##############
 
+         let num_span = document.querySelector('#num');
+         var num_length = /^[0-9]{10,11}$/;
+         var num_check = /^\d+$/;
 
+         //Required checking
+         if (str.num.value == "" || str.num.value == null) {
+            num_span.innerHTML = "This field is required";
+            str.num.focus();
+            return false;
+         }
 
+         //Number checking
+         else if (!num_check.test(str.num.value)) {
+            num_span.innerHTML = "Enter only numbers";
+            return false;
+         }
+
+         // Length checking
+         else if (!(num_length.test(str.num.value))) {
+            num_span.innerHTML = "!! Minimum:10 Maximum:11";
+            str.num.focus();
+            return false;
+         }
+         else {
+            num_span.innerHTML = "";
+         }
+
+         // ############## Password ##############
+
+         let pass_span = document.querySelector("#pass");
+
+         //Required checking
+         if (str.pass.value == "" || str.pass.value == null) {
+            pass_span.innerHTML = "This field is required";
+            str.pass.focus();
+            return false;
+         }
+
+         //Length checking
+         else if (str.pass.value.length < 8) {
+            pass_span.innerHTML = "Enter Minimum 8 digit";
+            str.pass.focus();
+            return false;
+         }
+         else {
+            pass_span.innerHTML = "";
+         }
+         // ############## Confirm password ##############
+
+         let cpass_span = document.querySelector("#cpass");
+
+         //Required checking
+         if (str.cpass.value == "" || str.cpass.value == null) {
+            cpass_span.innerHTML = "This field is required";
+            str.cpass.focus();
+            return false;
+         }
+
+         //Same password checking
+         else if (!(str.cpass.value === str.pass.value)) {
+            cpass_span.innerHTML = "Enter same password";
+            str.cpass.focus();
+            return false;
+         }
+         else {
+            pass_span.innerHTML = "";
+         }
       }
-
-
-
    </script>
 
 
