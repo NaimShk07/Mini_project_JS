@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+   <title>Document</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         height: 100vh;
+         background-color: #E0E0E0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-family: 'Poppins', sans-serif;
+
+      }
+
+      .container {
+         background-color: #E0E0E0;
+         box-shadow: 27px 27px 54px #bebebe,
+            -27px -27px 54px #ffffff;
+         border-radius: 50px;
+         padding: 40px;
+         width: 500px;
+
+      }
+
+      h1 {
+         text-align: center;
+         margin-bottom: 20px;
+      }
+
+      p {
+         font-size: 20px;
+         /* margin : 5px 0; */
+      }
+
+      input {
+         width: 100%;
+         /* height: 30px; */
+         margin-top: 5px;
+         font-size: 20px;
+         padding: 5px 10px;
+         background-color: none;
+         border: none;
+         outline: none;
+         font-family: 'Poppins', sans-serif;
+
+         border-radius: 10px;
+
+      }
+
+      span {
+         height: 20px;
+         width: 100%;
+         display: block;
+         margin: 5px 0;
+         color: red;
+
+      }
+
+      input[type=submit] {
+         background-color: rgb(0, 123, 255);
+         border: none;
+         color: white;
+         font-size: 20px;
+         border-radius: 5px;
+         margin: 0;
+         margin-top: 5px;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <form action="#" method="post" onsubmit="return run(this)">
+         <h1>Form Validation</h1>
+         <p>User Name :</p>
+         <input type="text" name="uname">
+         <span id="uname"></span>
+
+         <p>Email :</p>
+         <input type="email" name="email">
+         <span id="email"></span>
+
+         <p>Mobile Number :</p>
+         <input type="text" name="num">
+         <span id="num"></span>
+
+
+         <p>Password :</p>
+         <input type="text" name="pass"><br>
+         <span id="pass"></span>
+
+         <p>Confirm Password :</p>
+         <input type="text" name="cpass"><br>
+         <span id="cpass"></span>
+
+
+         <input type="submit" name="btn"><br>
+      </form>
+
+
+   </div>
+
+   <script>
+      function run(str) {  //str = form
+
+         // ############## First Name ##############
+
+         let uname_span = document.querySelector('#uname');
+
+         // Required checking
+         if (str.uname.value == "" || str.uname.value == null) {
+            uname_span.innerHTML = "This fleid is required";
+            str.uname.focus();
+            return false; //it will stop data from going to backend, if data doesn't fullfilled the criteria
+         }
+
+         // Alphabets checking
+         else if (!isNaN(str.uname.value)) {
+            uname_span.innerHTML = "Enter only alhpabets";
+            str.uname.focus();
+            return false;
+         }
+
+         // Length checking
+         else if (str.uname.value.length < 5) {
+            uname_span.innerHTML = "Length is too short";
+            str.uname.focus();
+            return false;
+         }
+         else {
+            uname_span.innerHTML = "";
+         }
+
+         // ############## Email ##############
+
+         let email_span = document.querySelector('#email');
+         var mail = /^[a-zA-Z0-9_]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$/;
+
+         // Required checking
+         if (str.email.value == "" || str.email.value == null) {
+            email_span.innerHTML = "This fleid is required";
+            str.email.focus();
+            return false;
+         }
+         //Format checking
+         else if (!mail.test(str.email.value)) {
+            email_span.innerHTML = "Write in this format yourname@example.com";
+            str.email.focus();
+         }
+         else {
+            email_span.innerHTML = "";
+         }
+
+
+
+
+      }
+
+
+
+   </script>
+
+
+</body>
+
+</html>
