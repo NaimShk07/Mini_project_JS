@@ -38,9 +38,9 @@ form > input[type="text"] {
 	outline: none;
 	padding: 10px;
 	font-size: 23px;
-
 }
-form > input[type="button"] {
+
+.button {
 	width: 200px;
 	margin: 0 auto;
 	background-color: black;
@@ -50,10 +50,10 @@ form > input[type="button"] {
 	border-radius: 5px;
 	border: none;
 }
-#guesses{
+#guesses {
 	background-color: rgb(95, 95, 95);
 	padding: 5px 10px;
 }
-#result{
+#result {
 	font-weight: 600;
 }
