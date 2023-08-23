@@ -25,7 +25,7 @@ html {
 }
 #inputs {
 	display: flex;
-   gap: 10px;
+	gap: 10px;
 }
 input {
 	width: 80%;
@@ -38,9 +38,9 @@ input {
 }
 input[type="submit"] {
 	width: 20%;
-   background-color: black;
-   color: white;
-   border: none;
+	background-color: black;
+	color: white;
+	border: none;
 }
 p {
 	width: 100%;
@@ -52,3 +52,13 @@ p {
 	background-color: rgb(160, 226, 160);
 	margin-bottom: 10px;
 }
+* { 
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+}
+ body,html{
+	height: 100%;
+	width: 100%
+}
+
