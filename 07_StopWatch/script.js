@@ -1,11 +1,9 @@
 let hourElem = document.querySelector('.hour');
 let minuteElem = document.querySelector('.minute');
 let secondElem = document.querySelector('.second');
-
 let hour = 0;
 let minute = 0;
 let second = 0;
-
 let startBtn = document.querySelector('#start');
 let stopBtn = document.querySelector('#stop');
 let resetBtn = document.querySelector('#reset');
@@ -48,9 +46,11 @@ startBtn.addEventListener('click', () => {
          minute = 0;
       }
 
+
       stopBtn.addEventListener('click', () => {
          clearInterval(start);
       });
+
       resetBtn.addEventListener('click', () => {
          hour = 0;
          minute = 0;
@@ -60,6 +60,8 @@ startBtn.addEventListener('click', () => {
          secondElem.textContent = "00";
          clearInterval(start);
       });
+
    }, 1000);
+
 
 });

@@ -1,0 +1,76 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Gilroy light";
+	font-weight: 600;
+}
+body,
+html {
+	height: 100%;
+	width: 100%;
+}
+.container {
+	min-height: 100vh;
+	width: 100%;
+	background: url(https://raw.githubusercontent.com/meabhisingh/jsBeginnerProjects/4716281d77202de0b97e0c916eadaee60cfe0151/7/bg.png)
+		center center/cover no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.weather {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+   transform: scale(2);
+}
+.weather1 {
+	font-size: 3vw;
+}
+p {
+	font-size: 1.7vw;
+}
+.nav {
+	height: 100px;
+	width: 90%;
+	position: absolute;
+	bottom: 10px;
+   left: 50%;
+   transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(74, 69, 62);
+	border-radius: 50px;
+
+}
+.nav form {
+	width: 70%;
+	display: flex;
+   gap: 20px;
+}
+input {
+	width: 90%;
+	height: 40px;
+	font-size: 20px;
+	background-color: transparent;
+	outline: none;
+	border: none;
+   border-bottom: 2px solid white;
+   color: white;
+}
+button {
+	width: 10%;
+	height: 40px;
+   background-color: #FFE569;
+   color: white;
+   border-top-right-radius: 20px;
+   border-bottom-right-radius: 20px;
+   color: black;
+   border: none;
+}
+img{
+   height: 20px;
+}
